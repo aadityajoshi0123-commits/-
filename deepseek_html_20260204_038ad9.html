@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Aaru ❤️</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #5d001e;
+            overflow-x: hidden;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .header {
+            background: linear-gradient(to right, #ff4e7f, #ff8a9e);
+            padding: 30px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .heart {
+            color: #ff4e7f;
+            animation: heartbeat 1.5s infinite;
+            display: inline-block;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            5% { transform: scale(1.2); }
+            10% { transform: scale(1.1); }
+            15% { transform: scale(1.3); }
+            50% { transform: scale(1); }
+            100% { transform: scale(1); }
+        }
+
+        .content {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .message-box {
+            background-color: #fff9fc;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 16px rgba(255, 105, 180, 0.1);
+            border-left: 5px solid #ff4e7f;
+            max-width: 700px;
+            width: 100%;
+        }
+
+        .message-box p {
+            line-height: 1.8;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .signature {
+            text-align: right;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: #ff4e7f;
+            margin-top: 20px;
+        }
+
+        .interactive-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 30px 0;
+            width: 100%;
+        }
+
+        .hearts-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .heart-btn {
+            background-color: #ffebf0;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 1.8rem;
+            color: #ff4e7f;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .heart-btn:hover {
+            background-color: #ff4e7f;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .heart-btn.clicked {
+            background-color: #ff4e7f;
+            color: white;
+            transform: scale(1.2);
+        }
+
+        .floating-hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .floating-heart {
+            position: absolute;
+            font-size: 1.5rem;
+            color: #ff4e7f;
+            opacity: 0.7;
+            animation: float 5s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffebf0;
+            color: #5d001e;
+            font-size: 0.9rem;
+        }
+
+        .instructions {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        .share-link {
+            background-color: #fff;
+            padding: 10px 15px;
+            border-radius: 10px;
+            margin-top: 10px;
+            border: 2px dashed #ff4e7f;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .share-link:hover {
+            background-color: #ffe6ee;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.8rem;
+            }
+            
+            .message-box {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="floating-hearts" id="floatingHearts"></div>
+        
+        <div class="header">
+            <h1>For My Aaru <span class="heart">♥</span></h1>
+            <p>A message from my heart to yours, my love</p>
+        </div>
+        
+        <div class="content">
+            <div class="message-box">
+                <p>My Dearest Aaru,</p>
+                
+                <p>There are tons of things I need to thank you for—so many memories we'll one day share with our kids, even though it has not even been a year.</p>
+                
+                <p>Life hasn't always been easy for me. But if someone had told me that everything I went through would eventually lead me to you, I would choose it all again, every single time.</p>
+                
+                <p>Thank you for being exactly the way you are. Thank you for loving me even when I'm not easy to love. Thank you for understanding me so deeply—when even my own were drifting away, you held me close.</p>
+                
+                <p>I can't even put into words what it feels like to be loved by you. To have someone with whom I can be completely myself, without fear of being hurt.</p>
+                
+                <p>I'm grateful that every candle I blew, every diya I lit, and every time my head rested at the feet of God found its meaning in you—in your love.</p>
+                
+                <div class="signature">
+                    I love you, Aaru. And I promise you, forever and always.
+                </div>
+            </div>
+            
+            <div class="interactive-area">
+                <h3>Click on hearts to reveal what you mean to me</h3>
+                <div class="hearts-container">
+                    <button class="heart-btn" data-message="You are my answered prayer">♥</button>
+                    <button class="heart-btn" data-message="With you, I found a home I never knew I needed">♥</button>
+                    <button class="heart-btn" data-message="Every moment with you feels like a blessing">♥</button>
+                    <button class="heart-btn" data-message="You saw me at my worst and still chose to love me">♥</button>
+                </div>
+                
+                <div id="heartMessage" style="display: none; background-color: #ffe6ee; padding: 15px; border-radius: 10px; margin-top: 15px; border: 1px dashed #ff4e7f; max-width: 500px; text-align: center;">
+                    <p id="messageText" style="font-style: italic; font-size: 1.2rem;"></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Made with <span class="heart">♥</span> for Aaru, my forever love</p>
+            <p class="instructions">Share this page with your loved one:</p>
+            <div class="share-link" onclick="copyToClipboard()">
+                <span id="pageLink">Click to copy link</span>
+                <div id="copyMessage" style="display: none; color: #ff4e7f; margin-top: 5px; font-size: 0.8rem;">
+                    ✓ Link copied to clipboard!
+                </div>
+            </div>
+            <p class="instructions" style="margin-top: 10px; font-size: 0.8rem;">
+                Save this HTML file or upload it to a free hosting service like GitHub Pages, Netlify, or Vercel to share it online.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Create floating hearts
+        const floatingHeartsContainer = document.getElementById('floatingHearts');
+        for (let i = 0; i < 20; i++) {
+            const heart = document.createElement('div');
+            heart.classList.add('floating-heart');
+            heart.innerHTML = '♥';
+            heart.style.left = `${Math.random() * 100}%`;
+            heart.style.animationDelay = `${Math.random() * 5}s`;
+            heart.style.fontSize = `${Math.random() * 20 + 15}px`;
+            floatingHeartsContainer.appendChild(heart);
+        }
+        
+        // Interactive heart buttons
+        const heartButtons = document.querySelectorAll('.heart-btn');
+        const heartMessage = document.getElementById('heartMessage');
+        const messageText = document.getElementById('messageText');
+        
+        heartButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove 'clicked' class from all buttons
+                heartButtons.forEach(btn => btn.classList.remove('clicked'));
+                
+                // Add 'clicked' class to the clicked button
+                this.classList.add('clicked');
+                
+                // Display the message
+                const message = this.getAttribute('data-message');
+                messageText.textContent = message;
+                heartMessage.style.display = 'block';
+                
+                // Create a burst of hearts animation
+                createHeartBurst(this);
+            });
+        });
+        
+        // Helper functions
+        function createHeartBurst(element) {
+            const rect = element.getBoundingClientRect();
+            const x = rect.left + rect.width / 2;
+            const y = rect.top + rect.height / 2;
+            
+            for (let i = 0; i < 8; i++) {
+                const burstHeart = document.createElement('div');
+                burstHeart.innerHTML = '♥';
+                burstHeart.style.position = 'fixed';
+                burstHeart.style.left = `${x}px`;
+                burstHeart.style.top = `${y}px`;
+                burstHeart.style.color = '#ff4e7f';
+                burstHeart.style.fontSize = '20px';
+                burstHeart.style.zIndex = '1000';
+                burstHeart.style.pointerEvents = 'none';
+                burstHeart.style.opacity = '1';
+                
+                // Random direction and distance
+                const angle = (i / 8) * Math.PI * 2;
+                const distance = 50 + Math.random() * 50;
+                const deltaX = Math.cos(angle) * distance;
+                const deltaY = Math.sin(angle) * distance;
+                
+                document.body.appendChild(burstHeart);
+                
+                // Animate
+                const animation = burstHeart.animate([
+                    { transform: 'translate(0, 0) scale(1)', opacity: 1 },
+                    { transform: `translate(${deltaX}px, ${deltaY}px) scale(0.5)`, opacity: 0 }
+                ], {
+                    duration: 1000,
+                    easing: 'ease-out'
+                });
+                
+                animation.onfinish = () => burstHeart.remove();
+            }
+        }
+        
+        // Function to copy link to clipboard
+        function copyToClipboard() {
+            // Create a temporary input element
+            const tempInput = document.createElement('input');
+            
+            // Get the current page URL
+            const currentUrl = window.location.href;
+            
+            // If we're viewing a local file, create instructions instead
+            if (currentUrl.startsWith('file://')) {
+                document.getElementById('pageLink').innerHTML = `
+                    <strong>How to share:</strong><br>
+                    1. Save this HTML file<br>
+                    2. Upload to:<br>
+                    - <a href="https://pages.github.com/" target="_blank">GitHub Pages</a><br>
+                    - <a href="https://www.netlify.com/" target="_blank">Netlify</a><br>
+                    - <a href="https://vercel.com/" target="_blank">Vercel</a><br>
+                    3. Share the link they provide!
+                `;
+                document.getElementById('copyMessage').style.display = 'none';
+                return;
+            }
+            
+            // For online deployment, copy the actual URL
+            tempInput.value = currentUrl;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            tempInput.setSelectionRange(0, 99999); // For mobile devices
+            
+            try {
+                // Execute copy command
+                document.execCommand('copy');
+                
+                // Show success message
+                document.getElementById('copyMessage').style.display = 'block';
+                document.getElementById('pageLink').textContent = currentUrl;
+                
+                // Hide message after 3 seconds
+                setTimeout(() => {
+                    document.getElementById('copyMessage').style.display = 'none';
+                }, 3000);
+            } catch (err) {
+                console.error('Failed to copy: ', err);
+                document.getElementById('pageLink').innerHTML = `
+                    <strong>Share this URL:</strong><br>
+                    ${currentUrl}
+                `;
+            }
+            
+            // Remove temporary input
+            document.body.removeChild(tempInput);
+        }
+        
+        // Update link display on page load
+        window.addEventListener('load', function() {
+            const currentUrl = window.location.href;
+            if (!currentUrl.startsWith('file://')) {
+                // If page is hosted online, show the actual URL
+                document.getElementById('pageLink').textContent = currentUrl;
+            }
+        });
+        
+        // Add some romantic quotes that appear randomly
+        const romanticQuotes = [
+            "Love is not about how many days, months, or years you've been together. It's about how much you love each other every day.",
+            "In your light, I learn how to love. In your beauty, how to make poems.",
+            "The best thing to hold onto in life is each other.",
+            "I saw that you were perfect, and so I loved you. Then I saw that you were not perfect and I loved you even more."
+        ];
+        
+        // Show a random quote in the console
+        console.log("%c💖 Romantic Thought: " + romanticQuotes[Math.floor(Math.random() * romanticQuotes.length)], "color: #ff4e7f; font-size: 14px; font-weight: bold;");
+        
+        // Create additional floating hearts on click anywhere
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('heart-btn')) return;
+            
+            // 20% chance to create a heart on click
+            if (Math.random() > 0.8) {
+                const x = e.clientX;
+                const y = e.clientY;
+                
+                const clickHeart = document.createElement('div');
+                clickHeart.innerHTML = '♥';
+                clickHeart.style.position = 'fixed';
+                clickHeart.style.left = `${x}px`;
+                clickHeart.style.top = `${y}px`;
+                clickHeart.style.color = '#ff4e7f';
+                clickHeart.style.fontSize = '25px';
+                clickHeart.style.zIndex = '1000';
+                clickHeart.style.pointerEvents = 'none';
+                clickHeart.style.opacity = '1';
+                clickHeart.style.transform = 'translate(-50%, -50%)';
+                
+                document.body.appendChild(clickHeart);
+                
+                // Animate
+                const animation = clickHeart.animate([
+                    { transform: 'translate(-50%, -50%) scale(1)', opacity: 1 },
+                    { transform: 'translate(-50%, -100px) scale(0.5)', opacity: 0 }
+                ], {
+                    duration: 1500,
+                    easing: 'ease-out'
+                });
+                
+                animation.onfinish = () => clickHeart.remove();
+            }
+        });
+    </script>
+</body>
+</html>
